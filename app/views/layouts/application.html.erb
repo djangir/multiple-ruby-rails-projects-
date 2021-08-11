@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title(yield(:title))%></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+  </head>
+
+  <body>
+
+    <%if alert || notice%>
+      <div class="alert alert-warning alert-dismissible fade show my-1" role="alert">
+        <h4 id="notice" class="text-center"> <%= notice %> </h4>
+        <h4 id="alert" class="text-center"> <%= alert %> </h4>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      
+      <script type="text/javascript">
+      
+        var alertNode = document.querySelector('.alert')  
+        setTimeout(function(){ alertNode.style = "display:none;"
+      }, 3000);
+      </script>
+
+    <% end %>
+
+    <%=render "static_pages/header"%>
+ 
+    <%= yield %>
+ 
+    <%=render "static_pages/footer"%>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+  </body>
+</html>

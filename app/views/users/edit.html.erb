@@ -1,0 +1,9 @@
+<h2 class="text-center my-2">Editing User</h2>
+
+<%= render 'form', user: @user %>
+
+<div class="text-center">
+<%= link_to 'Show', @user, class:"btn btn-outline-success" %> 
+<%= link_to 'Back', users_path, class:"btn btn-outline-success"%>
+</div>
+<% provide(:title, "Edit :- #{@user.name}") %>

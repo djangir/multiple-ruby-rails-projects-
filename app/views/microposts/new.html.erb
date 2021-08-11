@@ -1,0 +1,9 @@
+<h2 class="text-center my-2">New Micropost</h2>
+
+<%= render 'form', micropost: @micropost %>
+
+<div class="text-center">
+<%= link_to 'Back', microposts_path, class:"btn btn-outline-success m-auto" %>
+</div>
+
+<% provide(:title, "Add New Micropost") %>

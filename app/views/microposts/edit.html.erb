@@ -1,0 +1,9 @@
+<h2 class="text-center my-2">Editing Micropost</h2>
+
+<%= render 'form', micropost: @micropost %>
+
+<div class="text-center">
+	<%= link_to 'Show', @micropost, class:"btn btn-outline-success m-auto" %>
+	<%= link_to 'Back', microposts_path, class:"btn btn-outline-success m-auto" %>
+</div>
+<% provide(:title, @micropost.content) %>

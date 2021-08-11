@@ -1,0 +1,17 @@
+<div class="text-center my-3 lead"> 
+  <p>
+    <strong>Content:</strong>
+    <%= @micropost.content %>
+  </p>
+
+  <p>
+    <strong>User _ id:</strong>
+    <%= @micropost.user_id %>
+  </p>
+</div>
+
+<div class="text-center">
+<%= link_to 'Edit', edit_micropost_path(@micropost), class:"btn btn-outline-success m-auto" %> 
+<%= link_to 'Back', microposts_path , class:"btn btn-outline-success m-auto" %>
+</div>
+<% provide(:title, @micropost.content) %>
