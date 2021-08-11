@@ -7,12 +7,17 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get help" do
-    get static_pages_help_url
+    get help_url
     assert_response :success
   end
 
   test "should get contact" do
-    get static_pages_contact_url
+    get contact_url
+    assert_response :success
+  end
+
+  test "should get signup" do
+    get signup_url
     assert_response :success
   end
 end
