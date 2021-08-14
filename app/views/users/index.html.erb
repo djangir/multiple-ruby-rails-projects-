@@ -1,0 +1,52 @@
+<% provide(:title, "all users") %>
+<h2 class="text-center my-2"> All Users </h2>
+
+<div class="w-100 p-2">
+  <table class="table table-success table-striped table-hover text-center">
+    <thead>
+      <tr>
+        <th>User Id</th>
+        <th>User Name</th>
+        <th>User Email</th>
+        <th>Show</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+  <% @user.each do |user| %>
+    <tr>
+      <td>
+        <%= user.id%> 
+      </td>
+
+      <td>
+        <%= user.name%> 
+      </td>
+ 
+      <td>
+        <%= user.email%> 
+      </td>
+
+      <td>
+        <%= link_to 'Show', user, class:"btn btn-outline-success m-auto" %>
+      </td>
+
+      <td>
+        <%= link_to 'Edit', user, class:"btn btn-outline-success m-auto" %>
+      </td>
+      <td>
+        <%= link_to 'Delete', user, class:"btn btn-outline-success m-auto" %>
+      </td>
+
+
+    </tr>
+  <% end %>
+</tbody>
+</table>
+
+<div class="text-center">
+  <%= link_to 'New Users', "users/new", class:"btn btn-outline-success m-auto" %>
+</div>

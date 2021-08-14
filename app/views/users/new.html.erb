@@ -1,2 +1,43 @@
-<% provide(:title, "Signup Now") %>
-<h2 class="text-center my-2"> Signup Now </h2>
+<% provide(:title, "Sign Up ") %>
+
+<h2 class="text-center my-2"> Sign Up Now </h2>
+
+<div class="container py-5 px-2">
+	<%= form_with(model: @user, local: true)do |f| %>
+
+		<!-- Alert Message -->
+
+		<% if @user.errors.any? %>
+			<div id="error_explanation">
+				<div class="alert alert-warning">
+					Total <%= @user.errors.count %> Error
+				</div>
+				<% @user.errors.full_messages.each do |msg| %>
+					<ul class="text-danger">
+						<li><%=msg%></li>
+					</ul>
+				<% end %>
+			</div>
+		<% end %>
+		<!-- Alert Message end -->
+
+		<%=f.label :name, "Full Name"%>
+		<%=f.text_field :name, placeholder: "Full Name", class:"form-control mb-4 "%>
+
+		<%= f.label :email, "Email Address" %>
+		<%= f.email_field :email, placeholder:"Email Id", class:"form-control mb-4" %>
+
+		<%= f.label :password, "Password" %>
+		<%= f.password_field :password, placeholder:"Password", class:"form-control mb-4" %>
+
+		<%= f.label :password_confirmation, "Confirmation" %>
+		<%= f.password_field :password_confirmation, placeholder:"Conform Password", class:"form-control mb-4" %>
+
+		<%= f.submit "Sign Up" , class:"form-control my-4 btn btn-outline-success" %>
+
+	<% end %>
+ 
+<% provide(:title, " #{@user.name}") %>
+ 
+<%= link_to 'Back', users_path, class:"btn btn-warning m-auto form-control" %>
+</div>
