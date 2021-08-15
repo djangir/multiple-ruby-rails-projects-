@@ -55,5 +55,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 # Deploy
-# gem 'pg', group: :production # Added postgres and made it production only.
-# gem 'rails_12factor'
+ gem 'pg', group: :production # Added postgres and made it production only.
+ gem 'rails_12factor'

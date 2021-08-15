@@ -38,7 +38,7 @@
         <%= link_to 'Edit', user, class:"btn btn-outline-success m-auto" %>
       </td>
       <td>
-        <%= link_to 'Delete', user, class:"btn btn-outline-success m-auto" %>
+        <%= link_to 'Delete', user, method: :delete, data: { conform: "are you sure to delete" }, class:"btn btn-outline-success m-auto" %>
       </td>
 
 

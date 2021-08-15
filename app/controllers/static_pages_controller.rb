@@ -1,10 +1,12 @@
 class StaticPagesController < ApplicationController
   def home
     @title = "Static Home Page"
+    @mthod = "Home"
   end
 
   def help
     @title = "Static Help Page"
+    home
   end
 
   def contact
