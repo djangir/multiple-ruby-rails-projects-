@@ -1,0 +1,22 @@
+<h2>Your Pragmatic Catalog </h2>
+<div class="p-1 rounded-circle bg-secondary"></div>
+
+
+<% cache @products do %>
+	<% @products.each do |products| %>
+		<div class="my-5">
+			<div class="d-flex align-items-center">
+			  <div class="flex-shrink-0">
+			    <%= image_tag(products.image_url, alt:"#{products.title}") %>
+			  </div>
+			  <div class="flex-grow-1 ms-3">
+			    <p class="text-center"><b><%= products.title %></b></p> 
+			  	<p class="justify"><%= sanitize(products.description) %></p>
+			  </div>
+			</div>
+			<p class="ms-5"><b> Total : <%= number_to_currency(products.price) %> </b></p> 
+		</div>
+
+	<% end %>
+<% end %>
+	 

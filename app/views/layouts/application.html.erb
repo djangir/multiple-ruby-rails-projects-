@@ -12,6 +12,15 @@
 
   <body>
 
+    <% if notice || alert %>
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <%= notice %>
+        <%= alert %>
+        <button type="button" class="btn-close m-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    <% end %>
+    
+    <%= render "layouts/header" %>
     <div class="container">
       <%= yield %>
     </div>  
