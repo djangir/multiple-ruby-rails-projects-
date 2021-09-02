@@ -24,9 +24,22 @@ a{
 	color: red;
 	font-weight: bold;
 }
-
+ 
 img{
 	width: 300px;
     min-height: 150px;
 	margin: auto;
+}
+
+.field_with_errors input{
+    color: red;
+    border: 2px solid red;
+}
+
+.field{
+    margin: 10px 0 25px 0;
+}
+.cart4{
+    color: red;
+    height: 2rem;  
 }

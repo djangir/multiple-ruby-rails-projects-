@@ -14,7 +14,8 @@
 			  	<p class="justify"><%= sanitize(products.description) %></p>
 			  </div>
 			</div>
-			<p class="ms-5"><b> Total : <%= number_to_currency(products.price) %> </b></p> 
+			<p class="ms-5"><b> Price : <%= number_to_currency(products.price) %> </b></p> 
+			<%= button_to 'Add to Cart', line_items_path(product_id: products) %>
 		</div>
 
 	<% end %>
