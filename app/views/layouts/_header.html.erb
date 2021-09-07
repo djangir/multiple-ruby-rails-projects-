@@ -1,0 +1,17 @@
+<h2 class="text-center"> Header File </h2>
+
+<br>
+<br>
+
+<div class="m-2 container h3 text-center">
+<%= link_to "edit", "/users/edit", class:"text-decoration-none p-3 text-dark" %>
+<%= link_to "Posts", posts_path, class:"text-decoration-none p-3 text-dark" %>
+<%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"text-decoration-none p-3 text-dark" %> 
+</div>
+
+<div class="container my-3">
+<%= current_user.inspect %><br> 
+
+</div>
+<br>
+<br>

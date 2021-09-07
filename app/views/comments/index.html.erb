@@ -1,0 +1,29 @@
+<hr>
+<hr>
+<h2 class="text-center my-3">Listing comments</h2>
+
+<table class="table table-hover">
+  <tr>
+    <th>Title</th>
+    <th>Comment</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @comments.each do |comment| %>
+  <tr>
+    <td><%= comment.title %></td>
+    <td><%= comment.comment %></td>
+    <td><%= link_to 'Show', [comment.post, comment] %></td>
+    <td><%= link_to 'Edit', edit_post_comment_path(comment.post, comment) %></td>
+    <td><%= link_to 'Destroy', [comment.post, comment], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Comment', new_post_comment_path(params[:post_id]) %>
+<hr>
+<hr>
