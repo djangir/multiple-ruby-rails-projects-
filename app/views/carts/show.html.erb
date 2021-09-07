@@ -1,0 +1,28 @@
+<table class="table table-hover text-center">
+  <tr>
+    <th>Product Name</th>
+    <th>Quantity</th>
+    <th>Total</th>
+  </tr>
+  <% @cart.cart_items.each do |item| %>
+  <tr>
+    <td><%= item.instrument.title %></td>
+    <td><%= item.quantity %></td>
+    <td></td>
+  </tr>
+  <% end %>
+   
+  <tr>
+    <td><b>TOTAL</b></td>
+    <td>-</td>
+    <td>
+      <b><%= number_to_currency(@cart.total_price) %></b>
+    </td> 
+  </tr>
+
+</table>
+
+<%= button_to 'Empty Cart', @cart , method: :delete, data: {confirm: "sure TO delete" } %>
+<br>
+
+<%= link_to 'Back', carts_path %>

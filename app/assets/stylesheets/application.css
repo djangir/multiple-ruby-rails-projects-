@@ -1,0 +1,57 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+input[type=text], input[type=email], input[type=password], input[type=submit], textarea{
+    display: block;
+    margin:10px 0 5px 0;
+    width: 100%;
+    padding: 5px 10px;
+    outline: none;
+    border-radius: 70px 20px 20px 70px;
+    border: 3px none;
+    border-bottom: 4px solid #b9b7b7;
+    border-top: 4px solid #b9b7b7;
+}
+ 
+input[type=submit]{
+    background: #50fdc3;
+    border-top: 4px solid #b9b7b7; 
+    margin: 30px 0;
+}
+ input:hover, textarea:hover{
+    background: #f4fdfd;
+    border-bottom: 4px solid blue;
+}
+input:focus, textarea:focus{ 
+  background: #f4fdfd;
+  border-bottom: 4px solid blue;
+  padding: 5px 20px; 
+}
+
+.field_with_errors input{
+    color: red;
+    border-bottom: 4px solid red;
+}
+
+.field{
+    margin: 10px 0 25px 0;
+}
+
+textarea{  
+    padding: 5px 30px; 
+    border-radius:0 20px 0 30px 0; 
+}
+
+ textarea:focus{  
+    padding: 5px 35px;   
+}
+h2, h1{
+    text-align: center;
+}
+.cart4{
+    color: red;
+    height: 2rem;  
+}
