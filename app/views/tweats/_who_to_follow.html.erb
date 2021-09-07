@@ -1,0 +1,13 @@
+<% User.all.each do |user| %>
+<div style="height: 100px; background: #eaeaea4a; border-radius:10px;" class="py-2 px-1 my-3">
+	<div class="d-flex my-auto">
+		<p style="height: 50px; width: 50px; background: #ffb; border-radius: 50px; margin:auto 0;"></p> 
+		<div class="my-auto mx-2">
+	  
+	      <h5><%= "#{user.name}" %></h5>
+
+	      <p><%= "@#{user.username}" %></p>
+		</div>
+	</div>
+</div>
+<% end %>

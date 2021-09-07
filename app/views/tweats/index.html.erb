@@ -1,0 +1,62 @@
+<h2 class="text-center my-3"> WELCOME </h2>
+<div class="rounded-circle p-1 bg-secondary my-4"></div>
+
+<div style="display: grid;
+    grid-template-columns: auto auto auto auto; margin: auto;">
+
+<% if user_signed_in? %>
+<div>
+
+  <div class="d-flex">
+    <p style="height: 70px; width: 70px; background: #ffb; border-radius: 50px;">
+    </p> 
+    <div class="my-auto">
+      <p class="m-auto px-2 h6">
+      <%= current_user.name %> <br> 
+      <p class="m-auto px-2">
+      <%= "@#{current_user.username}" %>
+    </p>
+    </div>
+  </div>
+<hr>
+<table class="text-center m-auto">
+  <tr>
+    <th>Tweats</th>
+    <th class="px-2">Followers</th>
+    <th>Follow</th>
+  </tr>  
+  <tr>
+    <td> <%= current_user.tweats.count %></td>
+    <td>1m</td>
+    <td>250</td>
+  </tr>
+</table>
+
+<hr>
+</div>
+<% else %>
+  <%= render "trend" %>
+<% end %>
+
+<div class="text-center mx-2">
+<% if user_signed_in? %>
+  <div class="d-flex">
+  <p style="height: 60px; width: 60px; background: #ffb; border-radius: 100px; margin:auto 0;"></p> 
+  <div class="my-auto">
+    <p class="lead"> User </p>
+  <div class="mx-2">
+  <%= render 'form' %>
+  </div>
+  </div>
+</div>
+<% end %>
+
+<%= render "feed" %>
+</div> 
+
+<div class="text-center mx-auto">
+<%= render "who_to_follow" %>
+</div>
+</div>
+
+<div class="rounded-circle p-1 bg-secondary my-4"></div>

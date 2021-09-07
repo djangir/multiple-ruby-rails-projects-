@@ -1,0 +1,12 @@
+<p>
+  <strong>Title:</strong>
+  <%= @tweat.title %>
+</p>
+
+<p>
+  <strong>Tweet:</strong>
+  <%= @tweat.tweet %>
+</p>
+
+<%= link_to 'Edit', edit_tweat_path(@tweat) %> |
+<%= link_to 'Back', tweats_path %>

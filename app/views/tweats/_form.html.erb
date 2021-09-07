@@ -1,0 +1,24 @@
+<%= form_with(model: @tweat) do |form| %>
+  <% if @tweat.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tweat.errors.count, "error") %> prohibited this tweat from being saved:</h2>
+
+      <ul>
+        <% tweat.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.text_field :title, class:"form-control my-3", placeholder: :title %>
+  </div>
+  <div class="field">
+    <%= form.text_area :tweet, class:"form-control my-3", placeholder: :tweet %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class:"form-control my-3 btn-outline-secondary" %>
+  </div>
+<% end %>

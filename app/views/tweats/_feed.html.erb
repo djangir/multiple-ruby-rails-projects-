@@ -1,0 +1,33 @@
+<% @tweats.each do |tweat| %>  
+  <div style="background:#eaeaea4a;" class="p-2 my-3">
+  <div class="d-flex">
+    <p style="height: 70px; width: 70px; background: #ffb; border-radius: 50px; margin:auto 0;"></p> 
+    <h3 class="my-auto mx-2">
+      <%= tweat.user.name %>
+    </h3>
+  </div>
+  <%= "@#{tweat.user.username}" %>
+  <div class="text-center p-1 lead">
+   <b class="m-auto">
+      <%= tweat.title %>
+   </b>
+    <%= tweat.tweet %> 
+  </div> 
+  
+  <div class="mb-3 mx-auto lead">
+    <%= link_to tweat, class:"text-decoration-none text-dark" do%>
+      <b> <%= "Show #{tweat.title}" %></b>
+    <% end %>
+
+    <% if user_signed_in? %>
+    <% if tweat.user_id == current_user.id %>
+    <%= link_to 'Edit', edit_tweat_path(tweat), class:"text-decoration-none text-dark" %>
+    <%= link_to 'Destroy', tweat, method: :delete, data: { confirm: 'Are you sure?' }, class:"text-decoration-none text-dark" %>
+    
+    <% end %>
+    <% end %>
+
+  </div>
+  </div>
+<% end %>   
+ 
