@@ -21,9 +21,20 @@
     <% end %>
     
     <%= render "layouts/header" %>
-    <div class="container">
-      <%= yield %>
-    </div>  
+    <h2>Your Pragmatic Catalog </h2>
+    <div class="p-1 rounded-circle bg-secondary container"></div>
+    <div class="row w-100 p-2 px-md-5">
+      <div class="col-md-8 <%= @setoffset  %>">
+        <%= yield %>
+      </div>  
+      <% if @cart %>
+        <div class="col-md-3" style="position: fixed; top: 25%; right: 30px;">
+          <div id="cart">
+            <%= render_if @cart && @cart.line_items.any?, @cart %>
+          </div>
+        </div>
+      <% end %>
+  </div>  
  
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
 
