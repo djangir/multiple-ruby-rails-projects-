@@ -1,0 +1,32 @@
+<h1>Shots</h1>
+
+<table class="table table-hover text-center">
+  <thead>
+    <tr>
+      <th>Shot</th>
+      <th>Title</th>
+      <th>Discription</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shots.each do |shot| %>
+      <tr>
+        <td><%= image_tag(shot.user_shot_url, alt:shot.title, size: "300x250")%> </td>
+
+        <!-- <td><img src="<%= shot.user_shot %>" class="w-25"></td> -->
+        <td><%= shot.title %></td>
+        <td><%= shot.discription %></td>
+        <td><%= shot.user.name %></td>
+        <td><%= link_to 'Show', shot %></td>
+        <td><%= link_to 'Edit', edit_shot_path(shot) %></td>
+        <td><%= link_to 'Destroy', shot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    
+        <td> <%= shot.impressionist_count %> views </td>
+      </tr>
+
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,21 @@
+<p>
+  <strong>Title:</strong>
+  <%= @shot.title %>
+</p>
+
+<p>
+  <strong>Discription:</strong>
+  <%= @shot.discription %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @shot.user_id %>
+</p>
+<br>
+<br>
+  <%= @shot.impressionist_count %>
+<br>
+<br>
+<%= link_to 'Edit', edit_shot_path(@shot) %> |
+<%= link_to 'Back', shots_path %>
